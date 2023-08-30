@@ -18,11 +18,6 @@ def gallery(request,cat=None):
     gallery = Gallery.objects.all()
     context = {'gallery' : gallery,'category' : category,'galleries' : galleries}
     return render(request,'gallery/gallery.html',context=context)
-#  gallery information function 
-def gallery_information(request):
-    category= Category.objects.all()
-    context = {'category' : category}
-    return render(request,'gallery/gallery-single.html',context=context)
 #  contact function
 def contact(request):
     if request.method == 'POST' :
