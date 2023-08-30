@@ -1,0 +1,107 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block 'title' %}Services{% endblock 'title' %}
+{% block 'content' %}
+
+  <main id="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2>Services</h2>
+            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+
+            <a class="cta-btn" href="contact.html">Available for hire</a>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="row gy-4">
+          {% for sr in services %}
+
+          <div class="col-xl-3 col-md-6 d-flex">
+            <div class="service-item position-relative">
+              <i class="bi bi-activity"></i>
+              <h4><a href="" class="stretched-link">{{sr.title}}</a></h4>
+              <p>{{sr.content}}</p>
+            </div>
+          </div><!-- End Service Item -->
+          {% endfor %}
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Prices</h2>
+          <p>Check my adorable pricing</p>
+        </div>
+
+        <div class="row gy-4 gx-lg-5">
+          {% for price in prices %}
+          <div class="col-lg-6">
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>{{price.name}}</h3>
+              <h4>${{price.price}}</h4>
+            </div>
+          </div><!-- End Pricing Item -->
+          {% endfor%}
+
+     
+
+        </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Testimonials</h2>
+          <p>What they are saying</p>
+        </div>
+        <div class="slides-3 swiper">
+          <div class="swiper-wrapper">
+            {% for client in clients %}
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  {{client.description}}
+                </p>
+                <div class="profile mt-auto">
+                  <img src={{client.image.url}} class="testimonial-img" alt="">
+                  <h3>{{client.info}}</h3>
+                  <h4>{{client.job}}</h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock 'content' %}
