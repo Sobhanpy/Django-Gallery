@@ -1,2 +1,2 @@
-# Exam
- this repository is for midtem exam
+# One of my portfolio
+Powered by Django framework
